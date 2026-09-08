@@ -36,20 +36,23 @@ img{display:block;max-width:100%}
 body::before{
   content:"";
   position:fixed;
-  inset:0;
+  inset:-7%;
   z-index:-1;
   pointer-events:none;
   background:
     radial-gradient(ellipse at 8% 4%,  #d9fbff4d 0, transparent 27%),
     radial-gradient(ellipse at 92% 82%, #ba74d14f 0, transparent 32%),
     linear-gradient(135deg, #04195f, #075d9d 53%, #402477 100%);
-  background-size:145% 145%;
-  animation:promo-flow 10s ease-in-out infinite alternate;
+  background-size:190% 190%;
+  will-change:background-position,transform;
+  transform:translate3d(0,0,0) scale(1.02);
+  animation:promo-flow 7s ease-in-out infinite alternate;
 }
 @keyframes promo-flow{
-  0%  {background-position:0% 50%}
-  50% {background-position:82% 42%}
-  100%{background-position:30% 100%}
+  0%{background-position:0% 12%;transform:translate3d(-2%,0,0) scale(1.02)}
+  48%{background-position:100% 38%;transform:translate3d(2%,-2%,0) scale(1.08)}
+  76%{background-position:38% 100%;transform:translate3d(-1%,2%,0) scale(1.05)}
+  100%{background-position:88% 78%;transform:translate3d(2%,1%,0) scale(1.03)}
 }
 @media (prefers-reduced-motion:reduce){
   body::before{animation:none!important}
@@ -87,24 +90,18 @@ body::before{
   color:var(--muted);
   background:rgba(255,255,255,.06);
 }
+.brand{display:inline-flex;align-items:center;line-height:0}
 .brand-logo{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:106px;
-  height:44px;
-  padding:0 18px 2px;
-  border-radius:999px;
-  background:linear-gradient(180deg,#1f4ff3 0%,#0830c8 100%);
-  border:2px solid rgba(255,255,255,.92);
-  color:#fff;
-  font-size:28px;
-  font-weight:900;
-  letter-spacing:-.08em;
-  font-style:italic;
-  text-transform:lowercase;
-  box-shadow:0 8px 26px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.16);
+  display:block;
+  width:116px;
+  height:46px;
+  overflow:hidden;
+  text-indent:-9999px;
+  white-space:nowrap;
+  background:url("https://www.durexindia.com/cdn/shop/files/Durex-logo-blue.png?v=1614323259&width=1500") center/contain no-repeat;
+  filter:drop-shadow(0 8px 22px rgba(0,0,0,.18));
 }
+.brand-logo-footer{width:124px;height:50px;margin-bottom:18px}
 .hero-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.72fr);gap:28px;align-items:start}
 .card-shell,.main-media-card,.purchase-card,.simple-card,.spec-card,.review-card,.bundle-card,.ai-visual-card,.comparison-table-wrap{
   background:var(--card);
@@ -242,7 +239,6 @@ del{color:rgba(255,255,255,.58)}
 .faq-list p{padding-top:12px;color:var(--muted);line-height:1.6;font-size:15px}
 .footer{padding-top:0}
 .footer-shell{border-top:1px solid rgba(255,255,255,.12);padding-top:28px;display:grid;grid-template-columns:.6fr 1.4fr;gap:30px;align-items:start}
-.brand-logo-footer{margin-bottom:18px}
 .footer p{color:var(--muted);line-height:1.6}
 .footer-links{display:flex;flex-wrap:wrap;gap:14px 18px;justify-content:flex-end;color:var(--muted);font-size:14px;font-weight:600}
 .toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,120px);padding:15px 22px;border-radius:999px;background:#fff;color:var(--blue-900);font-weight:800;box-shadow:0 18px 50px rgba(0,0,0,.22);transition:.28s ease;z-index:70}
