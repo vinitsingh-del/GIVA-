@@ -1,20 +1,15 @@
 # Durex Play Buzzy Rabbit — PDP Redesign Concept
 
-Responsive static website concept based on the supplied HIPPEAS PDP structure and Durex India product assets.
+Responsive static product-page redesign concept inspired by the supplied HIPPEAS page structure and adapted to Durex visual language.
 
-## Open
-Open `index.html` in a browser. No build step or external dependency is required.
+## Live build
+Static HTML/CSS/JS. Product imagery is loaded from Durex India's public Shopify CDN so the repository remains lightweight and deployable.
 
 ## Included
-- Desktop + mobile responsive layout
-- Durex visual language and supplied Durex assets
-- Animated cinematic product GIFs built from supplied source product imagery
-- Interactive product gallery
-- Quantity selector + concept cart toast
-- Product benefit strip
-- Animated "Inside the Buzz" feature section
-- Feature cards, how-to section, recommendations carousel, reviews, FAQ
+- Desktop + mobile responsive PDP
+- Interactive image gallery and quantity controls
+- Cinematic CSS motion and graphical product storytelling
+- Benefit, feature, recommendation, reviews and FAQ sections
 - Sticky mobile add-to-cart bar
 
-## Note
-This is a front-end concept prototype, not an official Durex storefront and not connected to Shopify checkout/cart APIs.
+Concept only; not an official Durex storefront and not connected to Shopify checkout APIs.
