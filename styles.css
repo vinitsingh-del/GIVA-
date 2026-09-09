@@ -13,6 +13,8 @@
   --line:rgba(255,255,255,.14);
   --card:rgba(7,21,93,.58);
   --card-soft:rgba(255,255,255,.08);
+  --navy:#050b2e;
+  --royal:#1c3dff;
   --gutter:clamp(16px,3.6vw,56px);
   --max:1400px;
   --radius:28px;
@@ -36,26 +38,53 @@ img{display:block;max-width:100%}
 body::before{
   content:"";
   position:fixed;
-  inset:-7%;
-  z-index:-1;
+  inset:-20%;
+  z-index:-2;
   pointer-events:none;
   background:
-    radial-gradient(ellipse at 8% 4%,  #d9fbff4d 0, transparent 27%),
-    radial-gradient(ellipse at 92% 82%, #ba74d14f 0, transparent 32%),
-    linear-gradient(135deg, #04195f, #075d9d 53%, #402477 100%);
-  background-size:190% 190%;
+    radial-gradient(38% 38% at 18% 22%, var(--pink-400) 0%, transparent 62%),
+    radial-gradient(42% 42% at 82% 18%, var(--royal) 0%, transparent 64%),
+    radial-gradient(46% 46% at 78% 82%, var(--pink-300) 0%, transparent 60%),
+    radial-gradient(50% 50% at 20% 84%, var(--blue-700) 0%, transparent 66%),
+    linear-gradient(135deg, var(--blue-900), var(--navy) 55%, var(--blue-800) 100%);
+  background-repeat:no-repeat;
+  background-size:220% 220%;
+  filter:blur(70px) saturate(160%);
   will-change:background-position,transform;
-  transform:translate3d(0,0,0) scale(1.02);
-  animation:promo-flow 7s ease-in-out infinite alternate;
+  transform:translate3d(0,0,0) scale(1.04);
+  animation:watermix-a 16s ease-in-out infinite alternate;
 }
-@keyframes promo-flow{
-  0%{background-position:0% 12%;transform:translate3d(-2%,0,0) scale(1.02)}
-  48%{background-position:100% 38%;transform:translate3d(2%,-2%,0) scale(1.08)}
-  76%{background-position:38% 100%;transform:translate3d(-1%,2%,0) scale(1.05)}
-  100%{background-position:88% 78%;transform:translate3d(2%,1%,0) scale(1.03)}
+body::after{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  z-index:-1;
+  pointer-events:none;
+  mix-blend-mode:screen;
+  background:
+    radial-gradient(34% 34% at 70% 34%, var(--pink-400) 0%, transparent 58%),
+    radial-gradient(36% 36% at 28% 68%, var(--royal) 0%, transparent 58%),
+    radial-gradient(30% 30% at 55% 85%, var(--pink-300) 0%, transparent 58%);
+  background-repeat:no-repeat;
+  background-size:220% 220%;
+  filter:blur(85px);
+  opacity:.8;
+  will-change:background-position,transform;
+  animation:watermix-b 21s ease-in-out infinite alternate;
+}
+@keyframes watermix-a{
+  0%{background-position:10% 15%, 90% 5%, 85% 90%, 15% 85%, 0% 0%; transform:translate3d(-2%,0,0) scale(1.04)}
+  33%{background-position:55% 40%, 40% 30%, 45% 60%, 60% 45%, 30% 60%; transform:translate3d(2%,-2%,0) scale(1.12)}
+  66%{background-position:80% 70%, 15% 65%, 20% 25%, 85% 20%, 70% 30%; transform:translate3d(-1%,2%,0) scale(1.08)}
+  100%{background-position:20% 90%, 75% 95%, 60% 10%, 30% 10%, 100% 100%; transform:translate3d(1%,1%,0) scale(1.06)}
+}
+@keyframes watermix-b{
+  0%{background-position:0% 0%, 100% 100%, 50% 50%; transform:scale(1.1) translate3d(0,0,0)}
+  50%{background-position:100% 45%, 0% 55%, 65% 20%; transform:scale(1.2) translate3d(-2%,2%,0)}
+  100%{background-position:40% 100%, 60% 0%, 20% 80%; transform:scale(1.1) translate3d(2%,-1%,0)}
 }
 @media (prefers-reduced-motion:reduce){
-  body::before{animation:none!important}
+  body::before,body::after{animation:none!important}
 }
 .shell{max-width:var(--max);margin:0 auto}
 .section-pad{padding:clamp(26px,5vw,72px) var(--gutter)}
