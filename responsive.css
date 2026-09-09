@@ -128,7 +128,9 @@ h2{font-size:clamp(32px,3.5vw,50px)}
 
 @media (max-width:560px){
   :root{--gutter:14px;--max:100%}
-  body::before{inset:-10%;background-size:210% 210%;animation-duration:6.5s}
+  body::before,body::after{inset:-16%;background-size:240% 240%}
+  body::before{animation-duration:13s}
+  body::after{animation-duration:17s}
   .section-pad{padding:22px var(--gutter)}
   .hero-section{padding-top:14px}
   .nav-shell{padding:11px var(--gutter) 9px;gap:9px 11px}
